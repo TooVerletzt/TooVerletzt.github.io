@@ -1,4 +1,4 @@
-# Mycv test 4
+# Mycv -release
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
