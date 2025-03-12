@@ -11,6 +11,9 @@ import { CertificatesComponent } from './certificates/certificates.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { InterestsComponent } from './interests/interests.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,8 @@ import { InterestsComponent } from './interests/interests.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]
