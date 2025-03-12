@@ -1,0 +1,67 @@
+*   [33m2da5c67[m[33m ([m[1;31morigin/deploy-release[m[33m, [m[1;32mdeploy-release[m[33m)[m Merge pull request #14 from TooVerletzt/develop
+[31m|[m[32m\[m  
+[31m|[m *   [33m4b28db3[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m Merge pull request #13 from TooVerletzt/services
+[31m|[m [33m|[m[34m\[m  
+[31m|[m [33m|[m *   [33m5289421[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mservices[m[33m, [m[1;31morigin/services[m[33m)[m Services add #3
+[31m|[m [33m|[m [35m|[m[33m\[m  
+[31m|[m [33m|[m [35m|[m[33m/[m  
+[31m|[m [33m|[m[33m/[m[35m|[m   
+[31m|[m * [35m|[m   [33mddc213e[m Merge pull request #12 from TooVerletzt/release
+[31m|[m [1;31m|[m[1;32m\[m [35m\[m  
+[31m|[m [1;31m|[m * [35m\[m   [33m602f4f5[m Merge pull request #11 from TooVerletzt/deploy-release
+[31m|[m [1;31m|[m [1;33m|[m[31m\[m [35m\[m  
+[31m|[m [1;31m|[m[31m_[m[1;33m|[m[31m/[m [35m/[m  
+[31m|[m[31m/[m[1;31m|[m [1;33m|[m [35m|[m   
+* [1;31m|[m [1;33m|[m [35m|[m [33m9ecc2e4[m deploy release1.1
+[1;34m|[m [1;31m|[m * [35m|[m   [33mcdcf507[m Merge pull request #10 from TooVerletzt/revert-8-deploy-release
+[1;34m|[m [1;31m|[m [1;35m|[m[1;36m\[m [35m\[m  
+[1;34m|[m [1;31m|[m [1;35m|[m * [35m|[m [33m2135d10[m Revert "Deploy release1"
+[1;34m|[m [1;31m|[m [1;35m|[m[1;35m/[m [35m/[m  
+[1;34m|[m [1;31m|[m * [35m|[m   [33m299ad94[m Merge pull request #9 from TooVerletzt/revert-7-deploy-release
+[1;34m|[m [1;31m|[m [31m|[m[32m\[m [35m\[m  
+[1;34m|[m [1;31m|[m [31m|[m * [35m|[m [33m0e82e33[m Revert "Deploy release"
+[1;34m|[m [1;31m|[m * [32m|[m [35m|[m   [33mf873881[m Merge pull request #8 from TooVerletzt/deploy-release
+[1;34m|[m [1;31m|[m [32m|[m[34m\[m [32m\[m [35m\[m  
+[1;34m|[m [1;31m|[m [32m|[m [34m|[m[32m/[m [35m/[m  
+[1;34m|[m [1;31m|[m [32m|[m[32m/[m[34m|[m [35m|[m   
+[1;34m|[m [1;31m|[m [32m|[m * [35m|[m   [33mba6a1c8[m Merge branch 'release' into deploy-release
+[1;34m|[m [1;31m|[m [32m|[m [35m|[m[1;34m\[m [35m\[m  
+[1;34m|[m [1;31m|[m[1;34m_[m[32m|[m[1;34m_[m[35m|[m[1;34m/[m [35m/[m  
+[1;34m|[m[1;34m/[m[1;31m|[m [32m|[m [35m|[m [35m|[m   
+[1;34m|[m [1;31m|[m * [35m|[m [35m|[m [33m1a2a704[m Merge pull request #7 from TooVerletzt/deploy-release
+[1;34m|[m [1;31m|[m [1;31m|[m[35m\[m[35m|[m [35m|[m 
+[1;34m|[m [1;31m|[m [1;31m|[m * [35m|[m [33ma5ee437[m deploy release
+[1;34m|[m [1;31m|[m [1;31m|[m [1;32m|[m * [33m9819913[m add services #3
+[1;34m|[m [1;31m|[m[1;34m_[m[1;31m|[m[1;34m_[m[1;32m|[m[1;34m/[m  
+[1;34m|[m[1;34m/[m[1;31m|[m [1;31m|[m [1;32m|[m   
+* [1;31m|[m [1;31m|[m [1;32m|[m [33m772a94a[m[33m ([m[1;32mrelease[m[33m)[m temp
+[1;32m|[m[1;31m\[m[1;31m|[m [1;31m|[m [1;32m|[m 
+[1;32m|[m [1;31m|[m[1;32m_[m[1;31m|[m[1;32m/[m  
+[1;32m|[m[1;32m/[m[1;31m|[m [1;31m|[m   
+[1;32m|[m * [1;31m|[m   [33m4030454[m Merge pull request #6 from TooVerletzt/codebase
+[1;32m|[m [1;35m|[m[1;36m\[m [1;31m\[m  
+[1;32m|[m * [1;36m\[m [1;31m\[m   [33mc610bc1[m Merge pull request #4 from TooVerletzt/codebase
+[1;32m|[m [31m|[m[32m\[m [1;36m\[m [1;31m\[m  
+* [31m|[m [32m\[m [1;36m\[m [1;31m\[m   [33mc2b8ff6[m temp
+[1;31m|[m[34m\[m [31m\[m [32m\[m [1;36m\[m [1;31m\[m  
+[1;31m|[m [34m|[m[1;31m_[m[31m|[m[1;31m_[m[32m|[m[1;31m_[m[1;36m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[34m|[m [31m|[m [32m|[m [1;36m|[m   
+* [34m|[m [31m|[m [32m|[m [1;36m|[m [33mf8462ee[m[33m ([m[1;31morigin/release[m[33m)[m create branch release
+[34m|[m [34m|[m [31m|[m [32m|[m [1;36m|[m * [33m1010b75[m[33m ([m[1;31morigin/codebase[m[33m, [m[1;32mcodebase[m[33m)[m remove README
+[34m|[m [34m|[m [31m|[m [32m|[m [1;36m|[m[1;36m/[m  
+[34m|[m [34m|[m [31m|[m [32m|[m * [33m5937b38[m fix README #1
+[34m|[m [34m|[m [31m|[m [32m|[m[32m/[m  
+[34m|[m [34m|[m [31m|[m * [33m78b6d75[m finish codebase issue closes #1
+[34m|[m [34m|[m [31m|[m * [33m56eb19b[m create componets #1
+[34m|[m [34m|[m [31m|[m * [33m33d6f20[m create branch codebase #1
+[34m|[m [34m|[m [31m|[m[34m/[m  
+[34m|[m [34m|[m[34m/[m[31m|[m   
+[34m|[m * [31m|[m [33m43f6f42[m create branch develop 1
+[34m|[m [31m|[m[31m/[m  
+[34m|[m * [33m004df81[m create branch develop
+[34m|[m[34m/[m  
+[34m|[m * [33m561be76[m[33m ([m[1;31morigin/hotfixes[m[33m, [m[1;32mhotfixes[m[33m)[m create branch hotfixes
+[34m|[m[34m/[m  
+* [33m2c21c90[m[33m ([m[1;32mmaster[m[33m)[m TEST README
+* [33me633226[m[33m ([m[1;31morigin/master[m[33m)[m update README
+* [33mb4976b7[m initial commit
