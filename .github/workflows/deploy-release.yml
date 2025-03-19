@@ -48,7 +48,7 @@ jobs:
           CI_COMMIT_MESSAGE: save spark results
           CI_COMMIT_AUTHOR: TooVerletzt
         run: |
-             git config --global user.name "TooVerletzt"
+             git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
              git config --global user.email "zS23004724@estudiantes.uv.mx"
              git add .
              git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
