@@ -3,7 +3,8 @@ on:
   push:
     branches: [ "deploy-release"]
  # pull_request:
-  #  branches: [ "deploy-release"]
+#d  
+#  branches: [ "deploy-release"]
 jobs:
   ci_cd_deploy_release:
     runs-on: ubuntu-latest
