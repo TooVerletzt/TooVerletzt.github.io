@@ -1,6 +1,6 @@
 name: CI/CD deploy release
-#E#
-on: 
+
+on:
   push:
     branches: [ "deploy-release" ]
 
@@ -9,47 +9,42 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
-      - name: Mostrar archivos iniciales
-        run: ls -la
-
-      - name: Clonar repositorio
+      - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Confirmar archivos clonados
-        run: ls -la
-
-      - name: Configurar Node.js 20.x
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: Instalar dependencias
+      - name: Install dependencies
         run: npm ci
 
-      - name: Compilar Angular (producción)
-        run: npm run build -- --configuration production
+      - name: Build app
+        run: npm run build
 
-      - name: Mostrar archivos generados
-        run: ls -la dist/mycv/browser
-
-      - name: Cambiar a rama release y copiar build
+      - name: Copy files to docs/
         run: |
-          git fetch origin
-          git checkout release
-          rm -rf docs
-          mkdir docs
+          rm -rf docs/*
           cp -r dist/mycv/browser/* docs/
-          git add docs
 
-      - name: Hacer commit y push a release
-        env:
-          CI_COMMIT_MESSAGE: "🚀 Actualización automática desde deploy-release"
-          CI_COMMIT_AUTHOR: TooVerletzt
+      - name: Commit changes to docs/
         run: |
-          git config user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config user.email "zS23004724@estudiantes.uv.mx"
-          git commit -m "${{ env.CI_COMMIT_MESSAGE }}" || echo "No hay cambios"
-          git push origin release
+          git config --global user.name "TooVerletzt"
+          git config --global user.email "zS23004724@estudiantes.uv.mx"
+          git add docs/
+          git commit -m "🚀 Actualización automática desde deploy-release" || echo "No hay cambios que commitear"
+          git push origin deploy-release
+
+      - name: Crear Pull Request de deploy-release a release
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: "deploy-release"
+          destination_branch: "release"
+          pr_title: "🚀 Deploy automático a release"
+          pr_body: "Este PR fue generado automáticamente desde el workflow."
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
