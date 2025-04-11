@@ -8,7 +8,7 @@ jobs:
   ci_cd_deploy_release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Esto es suficiente para commit en deploy-release
+      contents: write  # Esto es suficiente para commit en deploy-release l
 
     steps:
       - name: Checkout repo
