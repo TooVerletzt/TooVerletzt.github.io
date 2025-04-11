@@ -13,16 +13,27 @@ export class LanguagesComponent {
 
   constructor(public languagesService: LanguagesService) {
     this.languagesService.getLanguages().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() as Languages })
-        )
+      map((changes: any[]) =>
+        changes.map((c: any) => {
+          const data = c.payload.doc.data() as Languages;
+          return { id: c.payload.doc.id, ...data };
+        })
       )
-    ).subscribe(data => {
+    ).subscribe((data: any[]) => {
       if (data.length > 0) {
-        this.languagesList = data[0].languages;
+        const langsRaw = data[0].languages;
+    
+        if (typeof langsRaw === 'string') {
+          const langs: string = langsRaw;
+          this.languagesList = langs.split(',').map((item: string) => item.trim());
+        } else if (Array.isArray(langsRaw)) {
+          this.languagesList = langsRaw.map((item: string) => item.trim());
+        } else {
+          console.warn("Formato de 'languages' inesperado:", langsRaw);
+          this.languagesList = [];
+        }
       }
     });
   }
-}
 
+}
