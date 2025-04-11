@@ -1,23 +1,43 @@
-<table border="1">
-    <tr>
-	<td colspan="2"><app-header></app-header> </td>
-      </tr>
-      <tr>
-	      <td> <app-work-experience></app-work-experience> </td>
-	      <td> <app-skills></app-skills> </td>
-      </tr>
-      
-      <tr>
-	      <td> <app-education></app-education> </td>
-              <td> <app-certificates></app-certificates> </td>
-      </tr>
-      
-      <tr>
-              <td> <app-languages></app-languages> </td>
-              <td> <app-interests></app-interests> </td>
+<div class="cv-container">
+  <!-- Cabeceraa2 -->
+  <app-header></app-header>
 
-      </tr>
+  <!-- Diseño del CV -->
+  <div class="cv-layout">
+    <!-- Panel izquierdo: Información personal y secciones de l idiomas e intereses -->
+    <div class="cv-left">
+      <div class="section">
+        <h3>Idiomas</h3>
+        <app-languages></app-languages>
+      </div>
 
-</table>
+      <div class="section">
+        <h3>Intereses</h3>
+        <app-interests></app-interests>
+      </div>
 
+      <div class="section">
+        <h3>Certificados</h3>
+        <app-certificates></app-certificates>
+      </div>
+    </div>
 
+    <!-- Panel derecho: Experiencia laboral, habilidades, educación -->
+    <div class="cv-right">
+      <div class="section">
+        <h3>Experiencia Laboral</h3>
+        <app-work-experience></app-work-experience>
+      </div>
+
+      <div class="section">
+        <h3>Habilidades</h3>
+        <app-skills></app-skills>
+      </div>
+
+      <div class="section">
+        <h3>Educación</h3>
+        <app-education></app-education>
+      </div>
+    </div>
+  </div>
+</div>

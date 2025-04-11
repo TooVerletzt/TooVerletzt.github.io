@@ -1,0 +1,46 @@
+name: CI/CD deploy release
+
+on: 
+  push:
+    branches: [ "deploy-release" ]
+
+jobs:
+  ci_cd_deploy_release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permiso para hacer commit y push
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build app
+        run: npm run build
+
+      - name: Copy files to docs/
+        run: |
+          rm -rf docs/*
+          cp -r dist/mycv/browser/* docs/
+
+      - name: Commit changes to deploy-release
+        run: |
+          git config user.name "TooVerletzt"
+          git config user.email "zS23004724@estudiantes.uv.mx"
+          git add docs
+          if git diff --cached --quiet; then
+            echo " No hay cambios en docs, no se realiza commit."
+          else
+            git commit -m " Actualización de build en deploy-release2"
+            git push origin deploy-release
+          fi
+
+
+

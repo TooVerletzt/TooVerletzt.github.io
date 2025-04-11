@@ -1,17 +1,38 @@
-<tr>
-	<td>
-		{{header.name}} <br>
-		{{header.goalLife}}
-	</td>
-	<td>
-		<img src="{{header.photoUrl}}" width ='200' height='200'>
+<!-- Cabecera con la información personal -->
+<table>
+    <tr>
+        <td>
+            <div class="profile-details">
+                <h1>{{ header.name }}</h1>
+                <p>{{ header.goalLife }}</p>
+            </div>
+        </td>
+        <td>
+            <img src="{{ header.photoUrl }}" class="profile-img" width="150" height="150">
+        </td>
+        <td>
+            <div class="profile-details">
+                <p>{{ header.email }}</p>
+                <p>{{ header.phoneNumber }}</p>
+                <p>{{ header.location }}</p>
+                <p>{{ header.socialNetwork }}</p>
+            </div>
+        </td>
+    </tr>
+</table>
 
-		</td>
-		<td>
-			{{header.email}}<br>
-			{{header.phoneNumber}}<br>
-			{{header.location}}<br>
-			{{header.socialNetwork}}
-		</td>
-</tr>
-
+<!-- Redes sociales -->
+<div class="social-media">
+    <a href="https://www.linkedin.com/in/abrahamcast" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/abrahamcast" target="_blank" class="social-icon">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://twitter.com/abrahamcast" target="_blank" class="social-icon">
+        <i class="fab fa-twitter"></i> Twitter
+    </a>
+    <a href="https://www.instagram.com/abrahamcast" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+</div>
