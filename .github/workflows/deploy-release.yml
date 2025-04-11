@@ -1,6 +1,6 @@
 name: CI/CD deploy release
 
-on:
+on: 
   push:
     branches: [ "deploy-release" ]
 
@@ -8,8 +8,7 @@ jobs:
   ci_cd_deploy_release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write  # Esto es suficiente para commit en deploy-release
 
     steps:
       - name: Checkout repo
@@ -31,20 +30,12 @@ jobs:
           rm -rf docs/*
           cp -r dist/mycv/browser/* docs/
 
-      - name: Commit changes to docs/
+      - name: Commit changes to deploy-release
         run: |
-          git config --global user.name "TooVerletzt"
-          git config --global user.email "zS23004724@estudiantes.uv.mx"
-          git add docs/
-          git commit -m "🚀 Actualización automática desde deploy-release" || echo "No hay cambios que commitear"
+          git config user.name "TooVerletzt"
+          git config user.email "zS23004724@estudiantes.uv.mx"
+          git add docs
+          git commit -m "📦 Actualización de build en deploy-release"
           git push origin deploy-release
 
-      - name: Crear Pull Request de deploy-release a release
-        uses: repo-sync/pull-request@v2
-        with:
-          source_branch: "deploy-release"
-          destination_branch: "release"
-          pr_title: "🚀 Deploy automático a release"
-          pr_body: "Este PR fue generado automáticamente desde el workflow."
-          github_token: ${{ secrets.GITHUB_TOKEN }}
 
