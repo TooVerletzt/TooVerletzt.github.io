@@ -1,41 +1,46 @@
 name: CI/CD deploy release
+
 on: 
   push:
-    branches: [ "deploy-release"]
-  pull_request:
-    branches: [ "deploy-release"]
+    branches: [ "deploy-release" ]
+
 jobs:
   ci_cd_deploy_release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permiso para hacer commit y push
+
     steps:
-      - uses: actions/checkout@v2
-      - run: echo 'hello world'
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v1
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          node-version: 20
+
       - name: Install dependencies
         run: npm ci
-      - name: Build setup
-        run: npm run build
-    
-      - name: list dir
-        run: ls -la dist/mycv/browser  
-      
-      - name: copy index.html, css, js
-        run: cp dist/mycv/browser/*.* docs  
-  
-      - name: list docs\
-        run: ls -la docs  
 
-      - name: GIT commit and push docs
-        env: 
-         CI_COMMIT_MESSAGE: save spark results
-         CI_COMMIT_AUTHOR: TooVerletzt 
+      - name: Build app
+        run: npm run build
+
+      - name: Copy files to docs/
         run: |
-         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-         git config --global user.email "zS23004724@estudiantes.uv.mx"
-         git add .
-         git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
-         git push origin deploy-release
+          rm -rf docs/*
+          cp -r dist/mycv/browser/* docs/
+
+      - name: Commit changes to deploy-release
+        run: |
+          git config user.name "TooVerletzt"
+          git config user.email "zS23004724@estudiantes.uv.mx"
+          git add docs
+          if git diff --cached --quiet; then
+            echo " No hay cambios en docs, no se realiza commit."
+          else
+            git commit -m " Actualización de build en deploy-release2"
+            git push origin deploy-release
+          fi
+
+
 
