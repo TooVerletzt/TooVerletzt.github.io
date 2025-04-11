@@ -1,0 +1,19 @@
+ul li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  
+  ul li i {
+    font-style: italic;
+  }
+  
+  ul li b {
+    font-weight: bold;
+  }
+  
+  /* Aumentar tamaño de los emojis */
+  ul li {
+    font-size: 1.2rem;
+  }
+  

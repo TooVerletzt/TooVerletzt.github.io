@@ -14,13 +14,23 @@ export class InterestsComponent {
   constructor(public interestsService: InterestsService) {
     this.interestsService.getInterests().snapshotChanges().pipe(
       map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() as Interests })
-        )
+        changes.map(c => {
+          const data = c.payload.doc.data() as Interests;
+          return { id: c.payload.doc.id, ...data };
+        })
       )
     ).subscribe(data => {
       if (data.length > 0) {
-        this.interestsList = data[0].interests;
+        const rawInterests = data[0].interests;
+
+        if (typeof rawInterests === 'string') {
+          this.interestsList = rawInterests.split(',').map(item => item.trim());
+        } else if (Array.isArray(rawInterests)) {
+          this.interestsList = rawInterests;
+        } else {
+          console.warn("Formato de 'interests' inesperado:", rawInterests);
+          this.interestsList = [];
+        }
       }
     });
   }

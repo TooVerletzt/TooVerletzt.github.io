@@ -1,6 +1,7 @@
+<!-- Sección de Educación -->
 <ul>
-  <li *ngFor="let edu of educationList">
-    <strong>{{ edu.degree }}</strong> - {{ edu.institution }} ({{ edu.startDate }} - {{ edu.endDate }})
+  <li *ngFor="let edu of educationList;">
+    <!-- Emoji agregado para educación -->
+    🎓 <strong>{{ edu.degree }}</strong> - {{ edu.institution }} ({{ edu.startDate }} - {{ edu.endDate }})
   </li>
 </ul>
-

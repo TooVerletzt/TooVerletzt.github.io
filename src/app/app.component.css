@@ -1,0 +1,117 @@
+/* Contenedor general */
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Diseño de layout de las secciones */
+.cv-layout {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Espacio entre las secciones */
+}
+
+/* Panel izquierdo */
+.cv-left, .cv-right {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo de cada sección */
+/* Secciones */
+.section {
+  margin-bottom: 20px; /* Reduce el espacio entre las secciones */
+  padding: 20px;
+  background-color: #eaf2f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Asegura que las secciones ocupen el 100% del ancho disponible */
+  max-width: 1000px; /* Limita el ancho de las secciones */
+  min-height: 200px; /* Asegura que todas las secciones tengan al menos un tamaño mínimo de altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que el contenido esté alineado hacia arriba */
+}
+
+/* Títulos dentro de las secciones */
+h3 {
+  font-size: 1.3rem;
+  color: #b80000;
+  border-bottom: 2px solid #b80000;
+  padding-bottom: 5px; /* Reduce el espacio debajo del título */
+  margin-bottom: 10px; /* Reduce el espacio entre el título y los valores */
+}
+
+/* Listas dentro de las secciones */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  font-size: 1rem;
+  padding: 0; /* Elimina el padding adicional */
+}
+
+ul li {
+  color: #333;
+  margin-bottom: 6px; /* Reduce el espacio entre los elementos de la lista */
+}
+
+/* Estilo para los enlaces y la información personal */
+.cv-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* Estilos para la imagen de perfil */
+.cv-header img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%; /* Esto hace que la imagen sea circular */
+  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente para cubrir el círculo */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra sutil */
+  border: 5px solid #fff; /* Borde blanco alrededor de la imagen para resaltar */
+}
+
+/* Estilos de la información personal */
+.cv-header-info {
+  margin-top: 10px;
+}
+
+.cv-header-info p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Responsividad */
+@media screen and (max-width: 900px) {
+  .cv-layout {
+    flex-direction: column; /* Cambia la dirección a columna para pantallas pequeñas */
+  }
+
+  .cv-left, .cv-right {
+    width: 100%; /* Ambos paneles ocupan el 100% en pantallas pequeñas */
+  }
+
+  .cv-container {
+    padding: 10px; /* Menor padding en pantallas pequeñas */
+  }
+
+  .section {
+    margin-bottom: 15px; /* Reducir el margen entre secciones */
+  }
+}
+
