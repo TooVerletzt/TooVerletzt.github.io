@@ -1,5 +1,4 @@
-export interface Interests {
+export class Interests {
   id?: string;
-  interests: string[];
+  interests: string = '';
 }
-
